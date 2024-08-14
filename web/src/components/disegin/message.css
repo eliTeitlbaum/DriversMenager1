@@ -1,0 +1,47 @@
+.massage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: rgb(151, 144, 80);
+    transform: translate(-50%, -50%);
+    font-size: 18pt;
+    font-weight: bold;
+    border-radius: 15px;
+    border: 2px black solid;
+    z-index: 1;
+}
+.massage_animation {
+    animation: 3s massage ease-in-out;
+    opacity: 0.0;
+}
+.massage > p {
+    color: rgb(71, 40, 20);
+    white-space: pre-wrap;
+    padding: 10px 30px;
+}
+.massage > div {
+    display: flex;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.massage > div > p {
+    cursor: pointer;
+    border: 3px rgb(71, 40, 20) solid;
+    border-radius: 15px;
+    padding: 5px 40px;
+    margin: 0px 10px;
+}
+
+
+@keyframes massage {
+    0%{
+        transform: scaleX(2) translate(-50%, -50%);
+        opacity: 0.0;
+    } 10%, 90% {
+        opacity: 1.0;
+        transform: scaleX(1) translate(-50%, -50%);
+    } 100% {
+        transform: scaleX(0.1) translate(-50%, -50%);
+        opacity: 0.0;
+    }
+}

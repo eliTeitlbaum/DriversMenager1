@@ -1,0 +1,27 @@
+.home-page-menu {
+    position: absolute;
+    height: 100%;
+    background-color: gray;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    min-width: 35%;
+}
+.home-page-menu > div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    min-width: fit-content;
+    width: 100%;
+}
+.home-page-menu > div > p {
+    cursor: pointer;
+    font-size: 2rem;
+    letter-spacing: 5pt;
+    font-weight: bolder;
+    color: white;
+    padding: 20px 10px;
+    margin: 10px 0px;
+    border-top: 2px white solid;
+    border-bottom: 2px white solid;
+}

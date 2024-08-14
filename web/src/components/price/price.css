@@ -1,0 +1,61 @@
+.Appprice {
+    width: 100%;
+}
+.Appprice * {
+    font-size: 1rem;
+}
+.Appprice-head {
+    height: 3rem;
+    line-height: 3rem;
+}
+.Appprice-head > p {
+    font-size: 1.5rem;
+}
+@media (min-width: 1281px) {
+    .Appprice-data, .Appprice-add-new {
+        width: 80%;
+        border: 2px gray solid;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 10px 0px;
+    }
+}
+@media (max-width: 1280px) {
+    .Appprice-data, .Appprice-add-new {
+        width: 100%;
+        border-top: 2px gray solid;
+        border-bottom: 2px gray solid;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 10px 0px;
+    }   
+}
+
+.Appprice-add-new {
+    margin-top: 10px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+.Appprice-add-new > p {
+    font-weight: bold;
+}
+.Appprice-add-new > select, .Appprice-add-new > input, .Appprice-add-new > p:last-child {
+    border: 1px black solid;
+    border-radius: 5px;
+}
+.Appprice-add-new > p:last-child {
+    padding: 0px 30px;
+}
+.Appprice-data {
+    overflow: auto;
+}
+.Appprice-data td {
+    padding: 10px 0px;
+    border-top: 1px gray solid;
+}
+.Appprice-data thead th {
+    font-size: 1.2rem;
+    padding: 10px 0px;
+}

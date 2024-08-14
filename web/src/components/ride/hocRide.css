@@ -1,0 +1,36 @@
+.hoc-ride {
+    border: var(--colorBottomCyan) 3px solid;
+    width: 70%;
+    border-radius: 8px;
+}
+.hoc-ride > div:first-child {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+.hoc-ride > div:first-child > * {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+.hoc-ride > div:first-child > p {
+    margin-right: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.hoc-ride > *:nth-child(2) {
+    animation: fall 1s ease-out;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,22 @@
+.record-and-text {
+    width: 90%;
+    border: 1px black solid;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+.record-and-text > div:nth-child(1) {
+    border-radius: 10px;
+    border: 1px black solid;
+}
+.record-and-text > div:nth-child(2) {
+    flex-grow: 1;
+}
+.record-and-text > div:nth-child(2) > p {
+    font-size: 0.75rem;
+}
+.record-and-text > div:nth-child(2) > input {
+    text-wrap: wrap;
+    width: 100%;
+    border-radius: 10px;
+}

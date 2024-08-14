@@ -1,0 +1,94 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    direction: rtl;
+    text-align: center;
+}
+:root {
+    --colorTopCyan: rgb(135, 206, 235);
+    --colorBottomCyan: rgb(70, 130, 180);
+}
+body {
+    background: linear-gradient(to bottom, rgb(135, 206, 235), rgb(70, 130, 180));
+    width: 100%;
+    height: 100vh;
+}
+input, select {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+}
+
+html {
+    font-size: 16pt;
+}
+
+table {
+    border-collapse: collapse;
+}
+.delete {
+    color: firebrick;
+}
+.edit {
+    color: rgb(41, 45, 44);
+}
+svg, path, .insert {
+    cursor: pointer;
+
+}
+
+/* טאבלטים ומעלה */
+@media (min-width: 600px) {
+    html {
+      font-size: 18pt;
+    }
+}
+  
+  /* מחשבים ניידים */
+@media (min-width: 768px) {
+    html {
+    font-size: 20pt;
+    }
+}
+
+/* מחשבים שולחניים */
+@media (min-width: 992px) {
+    html {
+    font-size: 22pt;
+    }
+}
+
+/* מסכים רחבים */
+@media (min-width: 1200px) {
+    html {
+    font-size: 24pt;
+    }
+}
+
+/* מסכים רחבים מאוד */
+@media (min-width: 1920px) {
+    html {
+    font-size: 26pt;
+    }
+}
+
+/* מסכי 4K */
+@media (min-width: 3840px) {
+    html {
+    font-size: 28pt;
+    }
+}
+
+/* מסכי QHD */
+@media (min-width: 2560px) {
+    html {
+    font-size: 25pt;
+    }
+}
+
+/* מסכי UltraWide */
+@media (min-width: 3440px) {
+    html {
+    font-size: 30pt;
+    }
+}
