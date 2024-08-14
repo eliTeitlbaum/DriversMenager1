@@ -3,13 +3,13 @@ import sqlite3 as sql
 
 def create():
     trip_information = "CREATE TABLE TripInformation (id_trip INTEGER PRIMARY KEY," \
-                       "passengers, departure_city, departure_street, destination_city," \
-                       "destination_street)"
+                       "numAdults, numChildren, numBabies, departure_city, departure_street, destination_city," \
+                       "destination_street, dataTime, phone, typeOfCar)"
 
     prices = "CREATE TABLE prices (id_price INTEGER PRIMARY KEY, from_city, to_city, price, work, office)"
 
     create_tables([
-        prices
+        trip_information
     ])
 
 

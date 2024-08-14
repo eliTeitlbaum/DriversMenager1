@@ -17,7 +17,12 @@ import Message from "../disegin/Message";
 
 function AddRide({}) {
     const [dataToAdd, setDataToAdd] = useState({
-        num: 1, fromCity: "", fromS: "", toCity: "", toS: "", phone: "", typeCar: "", aotoSearch: true, date: "", 
+        numAdult: 1, numChildren: 1, numBaby: 1, 
+        fromCity: "", fromS: "", toCity: "", toS: "",
+        phone: "", 
+        typeCar: "", 
+        aotoSearch: true, 
+        date: "", 
         time: new Date().toISOString().slice(0, 16)
     });
 
@@ -53,8 +58,28 @@ function AddRide({}) {
             <div className={'ride-numOfPassangers'}>
                 <p>מס' נוסעים</p>
                 <Input
-                value={dataToAdd.num} 
-                onChange={(value) => setDataToAdd({...dataToAdd, num: value})}
+                value={dataToAdd.numAdult} 
+                onChange={(value) => setDataToAdd({...dataToAdd, numAdult: value})}
+                type={"number"}
+                className={"add-ride-numOfPassangers"}
+                />
+            </div>
+
+            <div className={'ride-numOfPassangers'}>
+                <p>מס' ילדים</p>
+                <Input
+                value={dataToAdd.numCheildern} 
+                onChange={(value) => setDataToAdd({...dataToAdd, numCheildern: value})}
+                type={"number"}
+                className={"add-ride-numOfPassangers"}
+                />
+            </div>
+
+            <div className={'ride-numOfPassangers'}>
+                <p>מס' תינוקים</p>
+                <Input
+                value={dataToAdd.numBaby} 
+                onChange={(value) => setDataToAdd({...dataToAdd, numBaby: value})}
                 type={"number"}
                 className={"add-ride-numOfPassangers"}
                 />
