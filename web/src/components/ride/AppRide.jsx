@@ -1,30 +1,42 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./appRide.css";
 
-import AddRide from "./AddRide";
-import RideData from "./RideData";
+import Socket from "../../function/socket";
 
-import HocRide from "./HocRide";
+import RideData from "./RideData";
+import RideScoller from "./RideScoller";
 
 
 function AppRide() {
+    const [data, setData] = useState({});
+
+    const [settingsFilter, setSettingsFilter] = useState({
+        time: 24, num: "all"
+    })
+
+    useEffect(() => {
+
+        Socket.on("rideData", (king, data) => {
+            console.log(king, data);
+        })
+
+    }, [])
 
     return (<>
         <div className={"price-head"}>
             <p> נסיעות </p>
         </div>
 
-        <HocRide text={"חדש"}>
-            <AddRide />
-        </HocRide>
+        <RideScoller 
+        dataSettings={settingsFilter}
+        setDataSettings={setSettingsFilter}
+        />
 
-        <HocRide text={"מיון / סינון"}>
-            <div></div>
-        </HocRide>
+        <RideData
+        data={data}
+        settingsFilter={settingsFilter}
+        />
 
-        <HocRide text={"נסיעות"}>
-            <RideData />
-        </HocRide>
     </>);
 }
 

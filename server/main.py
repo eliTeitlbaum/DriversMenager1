@@ -20,8 +20,8 @@ def index():
 
 
 @socketio.on("start")
-def s_start():
-    emit("start", start())
+def start():
+    emit("start", {})
 
 
 @socketio.on("prices")

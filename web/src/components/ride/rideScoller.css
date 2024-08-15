@@ -1,0 +1,6 @@
+.ride-scoller-head {
+    display: flex;
+}
+.ride-scoller-head > p {
+    cursor: pointer;
+}

@@ -10,8 +10,6 @@ import Input from "../forms/Input";
 import SelectCitiesStreets from "./SelectCitiesStreets";
 import DateTime from "../disegin/DateTime";
 
-import HocRide from "./HocRide";
-
 import Message from "../disegin/Message";
 
 

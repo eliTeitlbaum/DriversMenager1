@@ -7,14 +7,20 @@ import sql.Sql_ride as Sql
 
 def route_ride(king, data):
     if king == 'n':
-        add_new_ride(data=data)
+        status = add_new_ride(data=data)
+        emit("message", status)
+    elif king == 'get-ride':
+        data = get_ride_from_db(data=data)
+        emit("rideData", ("initData", data))
+    else:
+        emit("message", 404)
 
 
 def add_new_ride(data):
 
     # check data
     if False:
-        emit("message", 422)
+        return 422
 
     # get a timestamp from %Y-%m-%dT%H:%M
     format_datetime = '%Y-%m-%dT%H:%M'
@@ -29,9 +35,13 @@ def add_new_ride(data):
     num_of_trip = Sql.new_ride(data=data_to_insert)
 
     # return message
-    emit("message", 200)
+    return 200
 
     # send to whatsapp
     # send to all users connected
 
+
+def get_ride_from_db(data):
+    print(data)
+    return "hello mt name is eli"
 
