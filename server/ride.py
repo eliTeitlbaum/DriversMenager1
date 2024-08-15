@@ -8,7 +8,7 @@ import sql.Sql_ride as Sql
 def route_ride(king, data):
     if king == 'n':
         status = add_new_ride(data=data)
-        emit("message", status)
+        emit("rideData", ("message", status))
     elif king == 'get-ride':
         data = get_ride_from_db(data=data)
         emit("rideData", ("initData", data))

@@ -5,7 +5,7 @@ import AddRide from "./AddRide";
 import SettingsFilter from "./SettingsFilter";
 
 
-function RideScoller({dataSettings, setDataSettings}) {
+function RideScoller({dataSettings, setDataSettings, setMessage}) {
     const [open, setOpen] = useState("");
 
     function clickOnScoller (name) {
@@ -25,7 +25,9 @@ function RideScoller({dataSettings, setDataSettings}) {
         <div className={"ride-scoller-data"}>
             {
                 open === "new" &&
-                <AddRide />
+                <AddRide 
+                setMessage={setMessage}
+                />
             }
 
             <SettingsFilter

@@ -32,7 +32,7 @@ def s_prices(data):
 
 @socketio.on("ride")
 def ride(king, data):
-    return route_ride(king=king, data=data)
+    route_ride(king=king, data=data)
 
 
 if __name__ == '__main__':

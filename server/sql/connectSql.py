@@ -1,7 +1,7 @@
 from sqlite3 import connect
 
 
-DB = r"C:\Users\eli\PycharmProjects\driversWeb\sql\data.db"
+DB = r"./sql/Data.db"
 
 
 def insert_connect():

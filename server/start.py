@@ -8,8 +8,8 @@ def start():
         'prices': select_all_prices()
     }
 
-    with open("data.json") as json_file:
-        response['streets'] = json.load(json_file)
+    # with open("data.json") as json_file:
+    #     response['streets'] = json.load(json_file)
 
     return response
 

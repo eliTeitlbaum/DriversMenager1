@@ -10,10 +10,8 @@ import Input from "../forms/Input";
 import SelectCitiesStreets from "./SelectCitiesStreets";
 import DateTime from "../disegin/DateTime";
 
-import Message from "../disegin/Message";
 
-
-function AddRide({}) {
+function AddRide({setMessage}) {
     const [dataToAdd, setDataToAdd] = useState({
         numAdult: 1, numChildren: 1, numBaby: 1, 
         fromCity: "", fromS: "", toCity: "", toS: "",
@@ -24,25 +22,17 @@ function AddRide({}) {
         time: new Date().toISOString().slice(0, 16)
     });
 
-    const [openMessage, setOpenMessage] = useState(false);
-
     const { streets } = useContext(Context);
 
     const sendToServer = () => {
-        if (! openMessage) {
-            setOpenMessage(true);
+        if (true) {
+            setMessage({open: true, text: ""});
             Socket.emit("ride", 'n', dataToAdd);
         }
     }
 
     return (
         <div className="add-ride">
-            {
-                openMessage && 
-                <Message
-                text={""}
-                />
-            }
 
             <RecordAndText />
             

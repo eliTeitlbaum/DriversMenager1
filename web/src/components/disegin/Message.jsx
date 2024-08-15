@@ -1,28 +1,33 @@
 import './message.css';
-import { useEffect, useContext } from 'react';
-import { Context } from '../../ProviderApp';
+import { useEffect, useRef } from 'react';
 
 
 export default function Massage ({text, animation, buttonAgree, setClose}) {
-
-    const {textToMessage, setTextToMessage} = useContext(Context);
-
-    useEffect(() => {
-        setTextToMessage(text)
-    }, [text])
+    const messageRef = useRef(null);
 
     useEffect(() => {
-        if (animation && textToMessage !== "") {
+        if (animation && text !== "") {
             setTimeout(() => {
             setClose();
         }, 2000)}
-    }, [textToMessage])
 
-    const class_name = textToMessage === "" ? 'spin' : animation ? 'massage massage_animation' : 'massage'
+        if (messageRef) {
+            const parent = messageRef.current.parentElement;
+
+            if (text === "") {
+                parent.style.opacity = "0.5";
+            } else {
+                parent.style.opacity = "1.0";
+            }
+        }
+
+    }, [text])
+
+    const class_name = text === "" ? 'spinner' : animation ? 'massage massage_animation' : 'massage'
 
     return (
-    <div className={class_name}>
-        <p> {textToMessage} </p>
+    <div className={class_name} ref={messageRef}>
+        <p> {text} </p>
 
         { buttonAgree &&
         <div> 

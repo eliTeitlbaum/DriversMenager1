@@ -9,12 +9,12 @@ def create():
     prices = "CREATE TABLE prices (id_price INTEGER PRIMARY KEY, from_city, to_city, price, work, office)"
 
     create_tables([
-        trip_information
+        trip_information, prices
     ])
 
 
 def create_tables(data):
-    conn = sql.connect(r"C:\Users\eli\PycharmProjects\driversWeb\sql\data.db")
+    conn = sql.connect(r"./Data.db")
     cur = conn.cursor()
 
     for i in data:
