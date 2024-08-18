@@ -43,10 +43,10 @@ function AppRide() {
         setMessage={setMessage}
         />
 
-        <RideData
+        {/* <RideData
         data={data}
         settingsFilter={settingsFilter}
-        />
+        /> */}
 
     </>);
 }

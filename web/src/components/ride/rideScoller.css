@@ -1,6 +1,14 @@
 .ride-scoller-head {
+    width: 80%;
     display: flex;
 }
 .ride-scoller-head > p {
     cursor: pointer;
+}
+
+.ride-scoller-data {
+    width: 80%;
+    margin-top: 30px;
+    border: 3px rgb(0, 140, 255) groove;
+    border-radius: 15px;
 }

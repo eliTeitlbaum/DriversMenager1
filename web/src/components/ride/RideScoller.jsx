@@ -1,12 +1,12 @@
 import "./rideScoller.css";
 import { useState } from "react";
 
-import AddRide from "./AddRide";
+import AddRide from "./addRide/AddRide";
 import SettingsFilter from "./SettingsFilter";
 
 
 function RideScoller({dataSettings, setDataSettings, setMessage}) {
-    const [open, setOpen] = useState("");
+    const [open, setOpen] = useState("new");
 
     function clickOnScoller (name) {
         setOpen((o) => o === name ? "": name);
@@ -29,11 +29,11 @@ function RideScoller({dataSettings, setDataSettings, setMessage}) {
                 setMessage={setMessage}
                 />
             }
-
+{/* 
             <SettingsFilter
             data={dataSettings}
             setData={setDataSettings}
-            />
+            /> */}
         </div>
     </>);
 }

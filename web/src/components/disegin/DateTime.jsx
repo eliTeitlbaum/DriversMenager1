@@ -1,7 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 
+import { IoCalendarOutline } from "react-icons/io5";
+
 function DateTime({dateTime, setDateTime}) {
     const [selectedTime, setSelectedTime] = useState('עכשיו');
+    const [shwoDateTime, setShwoDateTime] = useState(true);
 
     const inputDate = useRef();
 
@@ -17,6 +20,7 @@ function DateTime({dateTime, setDateTime}) {
 
     const clickOnDate = () => {
         inputDate.current.click();
+        setShwoDateTime(true);
     }
 
     const numbers = Array.from({ length: 24 }, (_, i) => (i + 1) * 5);
@@ -37,19 +41,15 @@ function DateTime({dateTime, setDateTime}) {
                 type="datetime-local" 
                 value={dateTime} 
                 onChange={(e) => setDateTime(e.target.value)}
-                // style={{
-                //     "position": 'absolute',
-                //     "opacity": 0,
-                //     "top": 0,
-                //     "left": 0,
-                //     "width": 0,
-                //     "height": 0
-                // }}
+                style={{
+                    "display": shwoDateTime ? "block" : "none"
+                }}
             />
 
-            {/* <p onClick={clickOnDate}> 
-                {"בחר תאריך"}
-            </p> */}
+            {/* <div onClick={clickOnDate}>
+                <p> {dateTime.split('T')[1]} </p>
+                <p> <IoCalendarOutline /> </p>
+            </div> */}
         </div>
     );
 }

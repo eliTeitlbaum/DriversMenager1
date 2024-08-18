@@ -1,4 +1,4 @@
-import InputAndSelect from "../forms/InputAndSelect";
+import InputAndSelect from "../../forms/InputAndSelect";
 
 function SelectCitiesStreets({text, data, valueCity, setValueCity, valueS, setValueS, className}) {
     

@@ -1,19 +1,20 @@
 import "./addRide.css";
 
 import { useState, useContext } from "react";
-import { Context } from "../../ProviderApp";
-import Socket from "../../function/socket";
+import { Context } from "../../../ProviderApp";
+import Socket from "../../../function/socket";
 
 import RecordAndText from "./RecordAndText";
 
-import Input from "../forms/Input";
+import Input from "../../forms/Input";
 import SelectCitiesStreets from "./SelectCitiesStreets";
-import DateTime from "../disegin/DateTime";
+import DateTime from "../../disegin/DateTime";
+import Travel from "./Travel";
 
 
 function AddRide({setMessage}) {
     const [dataToAdd, setDataToAdd] = useState({
-        numAdult: 1, numChildren: 1, numBaby: 1, 
+        numAdult: 1, numChildren: 0, numBaby: 0, 
         fromCity: "", fromS: "", toCity: "", toS: "",
         phone: "", 
         typeCar: "", 
@@ -34,7 +35,7 @@ function AddRide({setMessage}) {
     return (
         <div className="add-ride">
 
-            <RecordAndText />
+            {/* <RecordAndText /> */}
             
             <div className={"add-ride-date"}>
                 <DateTime 
@@ -43,37 +44,11 @@ function AddRide({setMessage}) {
                 />
             </div>
 
-            <div className={'ride-numOfPassangers'}>
-                <p>מס' נוסעים</p>
-                <Input
-                value={dataToAdd.numAdult} 
-                onChange={(value) => setDataToAdd({...dataToAdd, numAdult: value})}
-                type={"number"}
-                className={"add-ride-numOfPassangers"}
-                />
-            </div>
+            <Travel
+            dataToAdd={dataToAdd}
+            setDataToAdd={setDataToAdd}
+            />
 
-            <div className={'ride-numOfPassangers'}>
-                <p>מס' ילדים</p>
-                <Input
-                value={dataToAdd.numCheildern} 
-                onChange={(value) => setDataToAdd({...dataToAdd, numCheildern: value})}
-                type={"number"}
-                className={"add-ride-numOfPassangers"}
-                />
-            </div>
-
-            <div className={'ride-numOfPassangers'}>
-                <p>מס' תינוקים</p>
-                <Input
-                value={dataToAdd.numBaby} 
-                onChange={(value) => setDataToAdd({...dataToAdd, numBaby: value})}
-                type={"number"}
-                className={"add-ride-numOfPassangers"}
-                />
-            </div>
-
-            
             <div className={"ride-type"}>
                 <p>סוג רכב</p>
                 

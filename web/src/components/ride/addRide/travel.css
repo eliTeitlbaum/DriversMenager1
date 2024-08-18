@@ -1,0 +1,14 @@
+.travel-add-ride {
+    display: flex;
+    border: 1px black solid;
+    border-radius: 3px;
+}
+.travel-add-ride > div {
+    display: flex;
+}
+.travel-add-ride > div > p {
+    font-weight: bold;
+}
+.travel-add-ride > div > input {
+    width: 3ch;
+}
