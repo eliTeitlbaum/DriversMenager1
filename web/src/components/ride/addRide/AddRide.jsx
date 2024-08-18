@@ -20,7 +20,8 @@ function AddRide({setMessage}) {
         typeCar: "", 
         aotoSearch: true, 
         date: "", 
-        time: new Date().toISOString().slice(0, 16)
+        time: new Date().toISOString().slice(0, 16),
+        searchAoto: true
     });
 
     const { streets } = useContext(Context);
@@ -89,8 +90,8 @@ function AddRide({setMessage}) {
             </div>
 
             <div className={"ride-search"}>
-                <input type={"checkbox"} name="ride-search" />
-                <p >חיפוש אוטמטי</p>
+                <input type={"checkbox"} name="ride-search" value={true} />
+                <p>חיפוש אוטמטי</p>
             </div>
 
             <div className="send-add-ride" onClick={sendToServer}>

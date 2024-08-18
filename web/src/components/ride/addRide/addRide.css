@@ -1,8 +1,8 @@
-@media (min-width: 1000px) {
+/* @media (min-width: 1000px) {
     .add-ride {
         display: grid;
         padding: 10px 20px;
-        /* border: var(--colorBottomCyan) 3px solid; */
+        border: var(--colorBottomCyan) 3px solid;
         border-radius: 8px;
     }
     .add-ride .select-and-input {
@@ -10,15 +10,15 @@
     } .record-and-text {
         grid-column: 1/4;
     }
-}
+} */
 
-@media (max-width: 999px) {
+/* @media (max-width: 999px) {
     .add-ride {
         display: flex;
         flex-wrap: wrap;
         row-gap: 10px;
-        /* border-top: var(--colorBottomCyan) 3px solid;
-        border-bottom: var(--colorBottomCyan) 3px solid; */
+        border-top: var(--colorBottomCyan) 3px solid;
+        border-bottom: var(--colorBottomCyan) 3px solid;
         padding: 10px;
     }
     .ride-select-city-street, .add-ride-date {
@@ -30,20 +30,20 @@
     .ride-select-city-street > p {
         text-wrap: nowrap;
     }
-}
+} */
 
-@media (min-width: 2561px) {
+/* @media (min-width: 2561px) {
     .add-ride {
-        /* width: 70%; */
+        width: 70%;
     }
 }
 @media (min-width: 1281px) and (max-width: 2560px) {
     .add-ride {
-        /* width: 90%; */
+        width: 90%;
     }
-}
+} */
 
-@media (min-width: 1281px) {
+/* @media (min-width: 1281px) {
     .add-ride {
         grid-template-columns: 1fr 1fr 1fr;
         row-gap: 20px;
@@ -67,36 +67,50 @@
     .ride-search {
         grid-column: 2/3;
     }
-}
+} */
+
 .add-ride {
     position: relative;
-}
-.ride-search {
-    cursor: pointer;
-}
-.add-ride-date > div{
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+    padding-top: 10px;
 }
-
 .add-ride * {
     font-size: 1rem;
+}
+.add-ride > .add-ride-date * {
+    font-size: 0.7rem;
+}
+.add-ride > div {
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+}
+.ride-select-city-street, .add-price-phone {
+    min-width: 10rem;
+    width: 25%;
+}
+.ride-select-city-street > p {
+    text-wrap: nowrap;
+}
+.ride-select-city-street > div {
+    flex-grow: 1;
+}
+.send-add-ride {
+    width: 100%;
+    background-color: rgb(0, 81, 255);
 }
 .add-ride > div > input, .add-ride > div > select, .add-ride-date {
     border: 1px black solid;
     border-radius: 5px;
 }
-.add-ride > div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 .add-ride > div > * {
     margin: 0 10px;
 }
-
-/* .add-ride-numOfPassangers {
-    width: 5ch;
-} */
-.add-price-phone {
-    width: 15ch;
+.ride-search {
+    cursor: pointer;
 }

@@ -26,7 +26,9 @@ function DateTime({dateTime, setDateTime}) {
     const numbers = Array.from({ length: 24 }, (_, i) => (i + 1) * 5);
 
     return (
-        <div>
+        <div style={{
+            "display": "flex"
+        }}>
             <select value={selectedTime} onChange={(e) => setSelectedTime(e.target.value)}>
                 <option value="עכשיו">עכשיו</option>
                 {

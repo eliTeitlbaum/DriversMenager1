@@ -22,7 +22,8 @@ function AppRide() {
 
         Socket.on("rideData", (king, data) => {
             rideSocketFunction({
-                king: king, data: data, setInitData: setData
+                king: king, data: data, setInitData: setData, 
+                setMessage: (text) => setMessage({open: true, text: text})
             });
         })
 
@@ -30,7 +31,12 @@ function AppRide() {
 
     return (<>
         {
-           message.open && <Message text={message.text} />
+           message.open && 
+           <Message 
+           text={message.text} 
+           animation={true}
+           setClose={() => setMessage({open: false, text: ""})}
+           />
         }
 
         <div className={"price-head"}>

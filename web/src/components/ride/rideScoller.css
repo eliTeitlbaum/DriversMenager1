@@ -9,6 +9,7 @@
 .ride-scoller-data {
     width: 80%;
     margin-top: 30px;
-    border: 3px rgb(0, 140, 255) groove;
+    border: 3px rgb(0, 140, 255) solid;
     border-radius: 15px;
+    overflow: hidden;
 }
