@@ -21,7 +21,9 @@ function AppRide() {
     useEffect(() => {
 
         Socket.on("rideData", (king, data) => {
-            rideSocketFunction();
+            rideSocketFunction({
+                king: king, data: data, setInitData: setData
+            });
         })
 
     }, [])

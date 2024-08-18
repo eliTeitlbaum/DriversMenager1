@@ -10,8 +10,8 @@ def route_ride(king, data):
         status = add_new_ride(data=data)
         emit("rideData", ("message", status))
     elif king == 'get-ride':
-        data = get_ride_from_db(data=data)
-        emit("rideData", ("initData", data))
+        data = get_rides_from_db(data=data)
+        emit("rideData", ("getRidesByFilter", data))
     else:
         emit("message", 404)
 
@@ -41,7 +41,24 @@ def add_new_ride(data):
     # send to all users connected
 
 
-def get_ride_from_db(data):
-    print(data)
-    return "hello mt name is eli"
+def get_rides_from_db(data):
+
+    # get all rides from db by filter
+    data_from_db = Sql.select_all_rides()
+
+    if data_from_db:
+        data_to_return = {}
+
+        # keys from data
+        keys_data_from_db = (
+            "numA", "numC", "numB", "cityDep", "streetDep", "cityDes", "streetDes", "dataTime", "phone", "typeOfCar"
+        )
+
+        for ride in data_from_db:
+            data_to_return[ride[0]] = dict(zip(keys_data_from_db, ride[1:]))
+
+        return data_to_return
+    else:
+        return {}
+    
 

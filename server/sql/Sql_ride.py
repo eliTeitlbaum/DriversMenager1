@@ -9,3 +9,9 @@ def new_ride(data):
          "destination_city, destination_street, dataTime, phone, typeOfCar) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 
     return insert_for_all(ex=ex, fr=True, data=data)
+
+
+def select_all_rides():
+    ex = "SELECT * FROM TripInformation"
+
+    return select_for_all(ex=ex)
