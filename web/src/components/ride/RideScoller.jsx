@@ -12,7 +12,7 @@ function RideScoller({dataSettings, setDataSettings, setMessage}) {
         setOpen((o) => o === name ? "": name);
     }
 
-    return (<>
+    return (<div className={"ride-scoller"}>
         <div className={"ride-scoller-head"}>
             <p onClick={() => clickOnScoller("new")}>חדש</p>
             <p onClick={() => clickOnScoller("sort")}>מיון</p>
@@ -29,13 +29,8 @@ function RideScoller({dataSettings, setDataSettings, setMessage}) {
                 setMessage={setMessage}
                 />
             }
-{/* 
-            <SettingsFilter
-            data={dataSettings}
-            setData={setDataSettings}
-            /> */}
         </div>
-    </>);
+    </div>);
 }
 
 export default RideScoller;

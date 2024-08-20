@@ -18,7 +18,7 @@ function RideData({settingsFilter, data}) {
     }, [data])
 
     return (
-        <div>
+        <div className={"ride-data"}>
             {
                 Object.keys(shwoData).map((valueId, keyDiv) => (
                     <div key={keyDiv}>

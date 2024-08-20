@@ -43,16 +43,18 @@ function AppRide() {
             <p> נסיעות </p>
         </div>
 
-        <RideScoller
-        dataSettings={settingsFilter}
-        setDataSettings={setSettingsFilter}
-        setMessage={setMessage}
-        />
+        <div className={"ride-main"}>
+            <RideScoller
+            dataSettings={settingsFilter}
+            setDataSettings={setSettingsFilter}
+            setMessage={setMessage}
+            />
 
-        {/* <RideData
-        data={data}
-        settingsFilter={settingsFilter}
-        /> */}
+            <RideData
+            data={data}
+            settingsFilter={settingsFilter}
+            />
+        </div>
 
     </>);
 }

@@ -1,3 +1,20 @@
+.ride-main {
+    max-height: calc(100vh - 3rem);
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+.ride-main > *:first-child {
+    flex-shrink: 0;
+}
+.ride-main > *:last-child {
+    flex-grow: 1;
+    overflow-y: auto;
+    min-height: 0; 
+}
+.price-head {
+    height: 3rem;
+}
 .price-head > p {
     font-size: 3rem;
 }
